@@ -1,7 +1,9 @@
+package Transport;
+
 public abstract class TransportVehicle {
 
-    private String modelName;
-    private int wheelsCount;
+    private final String modelName;
+    private final int wheelsCount;
 
     public TransportVehicle(String modelName, int wheelsCount) {
         this.modelName = modelName;
@@ -15,5 +17,7 @@ public abstract class TransportVehicle {
     public int getWheelsCount() {
         return wheelsCount;
     }
+
+    public abstract void service();
 
 }

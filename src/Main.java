@@ -1,3 +1,9 @@
+import Service.ServiceStation;
+import Transport.Bicycle;
+import Transport.Car;
+import Transport.TransportVehicle;
+import Transport.Truck;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -11,13 +17,11 @@ public class Main {
         Bicycle bicycle = new Bicycle("bicycle1", 2);
         Bicycle bicycle2 = new Bicycle("bicycle2", 2);
 
+        TransportVehicle[] transportArray = {car, car2, truck, truck2, bicycle, bicycle2};
         ServiceStation station = new ServiceStation();
-        station.check(car, null, null);
-        station.check(car2, null, null);
-        station.check(null, bicycle, null);
-        station.check(null, bicycle2, null);
-        station.check(null, null, truck);
-        station.check(null, null, truck2);
+        for(TransportVehicle transport : transportArray){
+            station.check(transport);
+        }
 
     }
 
